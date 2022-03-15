@@ -22,15 +22,15 @@ public abstract class Poligon implements Comparable<Poligon> {
 //        else return 0;
     }
 
-    boolean equals(Poligon poligon) {
+    public boolean equals(Poligon poligon) {
         return poligon.getArea() == this.getArea();
     }
 
-    static boolean equals(Poligon poligon1, Poligon poligon2) {
+    public static boolean equals(Poligon poligon1, Poligon poligon2) {
         return poligon1.getArea() == poligon2.getArea();
     }
 
-    static int compare(Poligon poligon1, Poligon poligon2) {
+    public static int compare(Poligon poligon1, Poligon poligon2) {
         return Float.compare(poligon1.calcularArea(), poligon2.calcularArea());
     }
 

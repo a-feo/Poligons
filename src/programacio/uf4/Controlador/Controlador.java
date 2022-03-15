@@ -26,6 +26,7 @@ public class Controlador {
             scan.nextLine();
 
             switch (option) {
+                case 0 -> System.out.println("\nSortint...");
                 case 1 -> afegirPoligonRegular();
                 case 2 -> afegirQuadrat();
                 case 3 -> afegirRectangle();
@@ -35,7 +36,7 @@ public class Controlador {
                 case 7 -> showLlista();
                 case 8 -> ordenarLlista();
                 case 9 -> clearLlista();
-                default -> System.out.println("Aquesta opció no existeix");
+                default -> System.out.println("\nAquesta opció no existeix");
             }
 
         } while (option != 0);
