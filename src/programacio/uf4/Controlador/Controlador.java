@@ -121,7 +121,7 @@ public class Controlador {
         altura = scan.nextFloat();
         scan.nextLine();
 
-        // Crear nou polígon regular i afegir-lo a la llista de polígons
+        // Crear nou trapezi i afegir-lo a la llista de polígons
         LlistaPoligons.llista.add(new Trapezi(bMajor, bMenor, altura));
     }
 
@@ -136,11 +136,12 @@ public class Controlador {
         dMajor = scan.nextFloat();
         scan.nextLine();
 
-        // Crear nou polígon regular i afegir-lo a la llista de polígons
+        // Crear nou rombe i afegir-lo a la llista de polígons
         LlistaPoligons.llista.add(new Rombe(dMajor, dMenor));
     }
 
     public static void showLlista() {
+        if (llistaEstaBuida()) return;
         System.out.println("\nLlistat de polígons:");
         for (Poligon poligon : LlistaPoligons.llista) {
             System.out.println(poligon);
@@ -148,27 +149,20 @@ public class Controlador {
     }
 
     public static void ordenarLlista() {
+        if (llistaEstaBuida()) return;
         LlistaPoligons.llista.sort(Poligon::compareTo);
-//        Poligon poligonTmp;
-//        int size = LlistaPoligons.llista.size();
-//
-//        for (int i = 0; i < size; i++) {
-//            for (int j = i + 1; j < size; j++) {
-//
-//                Poligon poligonI = LlistaPoligons.llista.get(i);
-//                Poligon poligonJ = LlistaPoligons.llista.get(j);
-//
-//                if (poligonI.compareTo(poligonJ) > 0) {
-//                    poligonTmp = poligonI;
-//                    LlistaPoligons.llista.set(i, poligonJ);
-//                    LlistaPoligons.llista.set(j, poligonTmp);
-//                }
-//
-//            }
-//        }
     }
 
     public static void clearLlista() {
+        if (llistaEstaBuida()) return;
         LlistaPoligons.llista.clear();
+    }
+
+    public static boolean llistaEstaBuida() {
+        if (LlistaPoligons.llista.isEmpty()) {
+            System.out.println("\nLa llista de polígons està buida");
+            return true;
+        }
+        return false;
     }
 }

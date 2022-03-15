@@ -18,6 +18,7 @@ public class Trapezi extends Poligon {
 
     @Override
     public float calcularPerimetre() {
+        // Per trapezi isòsceles
         return bMajor + bMenor + calcularHipotenusa((bMajor - bMenor) / 2, altura) * 2;
     }
 
@@ -61,15 +62,5 @@ public class Trapezi extends Poligon {
 
     public void setAltura(float altura) {
         this.altura = altura;
-    }
-}
-
-class TestTrapezi {
-    public static void main(String[] args) {
-        Trapezi trapezi = new Trapezi(10, 8, 4);
-
-        System.out.println(trapezi.getNom());
-        System.out.println(trapezi.calcularArea());
-        System.out.println(trapezi.calcularPerimetre());
     }
 }
